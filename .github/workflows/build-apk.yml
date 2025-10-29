@@ -28,7 +28,7 @@ jobs:
         run: EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas init --id 55c31d29-8e65-4656-b445-6fbdc6103fc1 --non-interactive
 
       - name: Build APK with EAS
-        run: EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --platform android --profile preview --non-interactive
+        run: EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --platform android --profile preview --non-interactive --no-wait
 
       - name: Download Built APK
         run: EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build:download --platform android --latest --path .
