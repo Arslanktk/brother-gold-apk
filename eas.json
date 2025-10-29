@@ -1,9 +1,14 @@
 {
   "build": {
+    "production": {
+      "android": {
+        "buildType": "apk",
+        "credentialsSource": "remote"
+      }
+    },
     "preview": {
       "android": {
         "buildType": "apk",
-        "gradleCommand": ":app:assembleRelease",
         "credentialsSource": "remote"
       }
     }
