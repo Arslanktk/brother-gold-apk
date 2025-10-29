@@ -34,6 +34,7 @@
           "photosPermission": "The app accesses your photos to upload worker images."
         }
       ]
-    ]
+    ],
+    "projectId": "55c31d29-8e65-4656-b445-6fbdc6103fc1"
   }
 }
