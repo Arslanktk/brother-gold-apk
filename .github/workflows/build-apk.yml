@@ -25,12 +25,10 @@ jobs:
         run: npm install -g eas-cli
 
       - name: Build APK with EAS
-        run: eas build --platform android --profile preview --non-interactive
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        run: EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --platform android --profile preview --non-interactive
 
       - name: Download Built APK
-        run: eas build:download --platform android --latest --path .
+        run: EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build:download --platform android --latest --path .
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
