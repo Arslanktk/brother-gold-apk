@@ -9,9 +9,9 @@ Brother Gold is a professional cricket bat factory management system designed sp
 ## ✨ Features
 
 ### 🔐 Authentication & Roles
-- **Owner Login**: Fixed credentials with full system access
-- **Manager Signup**: Approval-based system with factory assignment
-- **Role-based Access**: Different dashboards for owners and managers
+- **Owner Login**: Fixed credentials with full system access.
+- **Manager Signup**: Approval-based system with factory assignment.
+- **Role-based Access**: Different dashboards for owners and managers.
 
 ### 🏭 Factory Management
 - **Multiple Factories**: Support for multiple factory locations
