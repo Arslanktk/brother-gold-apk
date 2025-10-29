@@ -1,0 +1,32 @@
+{
+  "rules": {
+    "users": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "$userId": {
+        ".read": "auth != null && (auth.uid == $userId || auth.token.role == 'owner')",
+        ".write": "auth != null && (auth.uid == $userId || auth.token.role == 'owner')"
+      }
+    },
+    "factories": {
+      ".read": "auth != null",
+      ".write": "auth != null && auth.token.role == 'owner'"
+    },
+    "workers": {
+      ".read": "auth != null",
+      ".write": "auth != null && (auth.token.role == 'owner' || auth.token.role == 'manager')",
+      "$workerId": {
+        ".read": "auth != null && (auth.token.role == 'owner' || auth.token.assigned_factory == newData.child('factory_id').val())",
+        ".write": "auth != null && (auth.token.role == 'owner' || auth.token.assigned_factory == newData.child('factory_id').val())"
+      }
+    },
+    "daily_logs": {
+      ".read": "auth != null",
+      ".write": "auth != null && (auth.token.role == 'owner' || auth.token.role == 'manager')",
+      "$logId": {
+        ".read": "auth != null && (auth.token.role == 'owner' || auth.token.assigned_factory == newData.child('factory_id').val())",
+        ".write": "auth != null && (auth.token.role == 'owner' || (auth.token.role == 'manager' && auth.token.assigned_factory == newData.child('factory_id').val() && newData.child('approved').val() == false))"
+      }
+    }
+  }
+}
