@@ -1,7 +1,4 @@
 {
-  "cli": {
-    "projectId": "55c31d29-8e65-4656-b445-6fbdc6103fc1"
-  },
   "build": {
     "preview": {
       "android": {
